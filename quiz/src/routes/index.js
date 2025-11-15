@@ -1,0 +1,61 @@
+// import { PrivateRoute } from "../components/PrivateRoute";
+// import { LayoutDefault } from "../layout/LayoutDefault";
+// import { Answers } from "../pages/Answers";
+// import { Home } from "../pages/Home";
+// import { Login } from "../pages/Login";
+// import { Logout } from "../pages/Logout";
+// import { Register } from "../pages/Register";
+// import App from "../pages/App";
+// import { Topic } from "../pages/Topic";
+// import { Quiz } from "../pages/Quiz";
+// import Result from "../pages/Result";
+
+export const routes = [
+  {
+    // path: "/",
+    // element: <LayoutDefault />,
+    // children: [
+    //   {
+    //     path: "/",
+    //     element: <Home />
+    //   },
+    //   {
+    //     path: "/app",
+    //     element: <App />
+    //   },
+    //   {
+    //     path: "/login",
+    //     element: <Login />
+    //   },
+    //   {
+    //     path: "/register",
+    //     element: <Register />
+    //   },
+    //   {
+    //     path: "/logout",
+    //     element: <Logout />
+    //   },
+    //   {
+    //     element: <PrivateRoute/>,
+    //     children: [
+    //       {
+    //         path: "/topic",
+    //         element: <Topic />
+    //       },
+    //       {
+    //         path: "/answers",
+    //         element: <Answers />
+    //       },
+    //       {
+    //         path: "/quiz/:id",
+    //         element: <Quiz />
+    //       },
+    //       {
+    //         path: "/result/:id",
+    //         element: <Result />
+    //       },
+    //     ]
+    //   }
+    // ]
+  }
+]
