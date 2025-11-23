@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --ant-pink-1: #291321;
+  --ant-pink-2: #40162f;
+  --ant-pink-3: #551c3b;
+  --ant-pink-4: #75204f;
+  --ant-pink-5: #a02669;
+  --ant-pink-6: #cb2b83;
+  --ant-pink-7: #e0529c;
+  --ant-pink-8: #f37fb7;
+  --ant-pink-9: #f8a8cc;
+  --ant-pink-10: #fad2e3;
+  --background-color: #fad2e3;
+  --background-color-2: #fff;
+  --text-color: #291321;
+}

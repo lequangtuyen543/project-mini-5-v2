@@ -1,7 +1,7 @@
 // import { PrivateRoute } from "../components/PrivateRoute";
-// import { LayoutDefault } from "../layout/LayoutDefault";
+import { LayoutDefault } from "../layout/LayoutDefault";
 // import { Answers } from "../pages/Answers";
-// import { Home } from "../pages/Home";
+import { Home } from "../pages/Home";
 // import { Login } from "../pages/Login";
 // import { Logout } from "../pages/Logout";
 // import { Register } from "../pages/Register";
@@ -12,13 +12,13 @@
 
 export const routes = [
   {
-    // path: "/",
-    // element: <LayoutDefault />,
-    // children: [
-    //   {
-    //     path: "/",
-    //     element: <Home />
-    //   },
+    path: "/",
+    element: <LayoutDefault />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
     //   {
     //     path: "/app",
     //     element: <App />
@@ -56,6 +56,6 @@ export const routes = [
     //       },
     //     ]
     //   }
-    // ]
+    ]
   }
 ]
