@@ -25,5 +25,29 @@ code {
   --ant-pink-10: #fad2e3;
   --background-color: #fad2e3;
   --background-color-2: #fff;
-  --text-color: #291321;
+  --text-color: #cb2b83;
+}
+
+.ant-btn {
+  background-color: #fff;
+  color: var(--ant-pink-6);
+  border: none;
+}
+
+.ant-btn:hover {
+  background-color: #fff;
+  color: var(--ant-pink-2) !important;
+  border: none;
+}
+
+.btn1 {
+  background-color: var(--ant-pink-6);
+  color: var(--ant-pink-10);
+  border: none;
+}
+
+.btn1:hover {
+  background-color: var(--ant-pink-7) !important;
+  color: var(--ant-pink-10) !important;
+  border: none;
 }
