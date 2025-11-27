@@ -2,16 +2,16 @@
   "users": [
     {
       "id": "1",
-      "fullName": "Alice Nguyen",
-      "email": "alice.nguyen@example.com",
+      "fullName": "Admin",
+      "email": "admin@gmail.com",
       "password": "1",
       "token": "token_1a2b3c"
     },
     {
       "id": "2",
-      "fullName": "Bob Tran",
-      "email": "bob.tran@example.com",
-      "password": "hashed_password_2",
+      "fullName": "Le Quang Tuyen",
+      "email": "tuyen@gmail.com",
+      "password": "1",
       "token": "token_4d5e6f"
     },
     {
@@ -34,83 +34,6 @@
       "email": "emma.hoang@example.com",
       "password": "hashed_password_5",
       "token": "token_m4n5o6"
-    },
-    {
-      "id": "6",
-      "fullName": "Frank Vu",
-      "email": "frank.vu@example.com",
-      "password": "hashed_password_6",
-      "token": "token_p7q8r9"
-    },
-    {
-      "id": "7",
-      "fullName": "Grace Bui",
-      "email": "grace.bui@example.com",
-      "password": "hashed_password_7",
-      "token": "token_s1t2u3"
-    },
-    {
-      "id": "8",
-      "fullName": "Henry Do",
-      "email": "henry.do@example.com",
-      "password": "hashed_password_8",
-      "token": "token_v4w5x6"
-    },
-    {
-      "id": "9",
-      "fullName": "Isabella Phan",
-      "email": "isabella.phan@example.com",
-      "password": "hashed_password_9",
-      "token": "token_y7z8a9"
-    },
-    {
-      "id": "10",
-      "fullName": "Jackie Nguyen",
-      "email": "jackie.nguyen@example.com",
-      "password": "hashed_password_10",
-      "token": "token_b1c2d3"
-    },
-    {
-      "id": "4d4a",
-      "fullName": "Le Quang Tuyen",
-      "email": "t",
-      "password": "t",
-      "token": "U4vdsxke0Nq8waPt9Bq787TpFHs3bzvg"
-    },
-    {
-      "id": "f039",
-      "fullName": "t",
-      "email": "tt",
-      "password": "t",
-      "token": "XmugwPBaMzOhJWKl0NVVAEqN46TNdqXF"
-    },
-    {
-      "id": "a9fd",
-      "fullName": "a",
-      "email": "a",
-      "password": "a",
-      "token": "M8A2VtPrSuFXDGUyzxvs6fgRmQYn7k3d"
-    },
-    {
-      "id": "9d3d",
-      "fullName": "b",
-      "email": "b",
-      "password": "b",
-      "token": "Gj3ohsRuI395ypAqmI4gmZXgQ4HmB1ed"
-    },
-    {
-      "id": "368a",
-      "fullName": "c",
-      "email": "c",
-      "password": "c",
-      "token": "Wi7jd3oazzVKuvEqwYaclea6eTBycEug"
-    },
-    {
-      "id": "e76e",
-      "fullName": "ttt",
-      "email": "ttt",
-      "password": "t",
-      "token": "KKewse9HdKqSXm1hnTXOWJfzk4UPw641"
     }
   ],
   "topics": [

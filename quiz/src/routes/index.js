@@ -2,7 +2,7 @@
 import { LayoutDefault } from "../layout/LayoutDefault";
 // import { Answers } from "../pages/Answers";
 import { Home } from "../pages/Home";
-// import { Login } from "../pages/Login";
+import { Login } from "../pages/Login";
 // import { Logout } from "../pages/Logout";
 // import { Register } from "../pages/Register";
 // import App from "../pages/App";
@@ -23,10 +23,10 @@ export const routes = [
     //     path: "/app",
     //     element: <App />
     //   },
-    //   {
-    //     path: "/login",
-    //     element: <Login />
-    //   },
+      {
+        path: "/login",
+        element: <Login />
+      },
     //   {
     //     path: "/register",
     //     element: <Register />

@@ -1,4 +1,4 @@
-import { Flex, Layout } from 'antd';
+import { Button, Flex, Layout, Space } from 'antd';
 import './LayoutDefault.scss';
 import { NavLink } from 'react-router-dom';
 
@@ -9,8 +9,20 @@ export const HeaderApp = () => {
     <>
       <Header className='header'>
         <div className='container'>
-          <h1>Quiz</h1>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">
+            <h2>Quiz</h2>
+          </NavLink>
+
+          <div className='nav-wrap'>
+            <NavLink to="/">Home</NavLink>
+          </div>
+
+          <Space size="middle">
+            <NavLink to="/login">
+              <Button>Login</Button></NavLink>
+            <NavLink to="/register">
+              <Button>Register</Button></NavLink>
+          </Space>
         </div>
       </Header>
     </>
