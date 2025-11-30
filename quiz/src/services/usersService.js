@@ -10,7 +10,7 @@ export const register = async (options) => {
   return result;
 };
 
-export const checkExits = async (key, value) => {
+export const checkExist = async (key, value) => {
   const result = await GET(`users?${key}=${value}`);
   return result;
 }; 

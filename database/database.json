@@ -34,6 +34,20 @@
       "email": "emma.hoang@example.com",
       "password": "hashed_password_5",
       "token": "token_m4n5o6"
+    },
+    {
+      "id": "c4f9",
+      "fullName": "trinh",
+      "email": "trinh@gmail.com",
+      "password": "1",
+      "token": "POqHZQYZAhehebe6IV11DzhMR5vR4nHb"
+    },
+    {
+      "id": "0595",
+      "fullName": "tam",
+      "email": "tam@gmail.com",
+      "password": "1",
+      "token": "hvpDxOuxaEPJ8b8ehZ4tEGcigOLFgljJ"
     }
   ],
   "topics": [

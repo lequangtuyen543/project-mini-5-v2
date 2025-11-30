@@ -1,66 +1,55 @@
-import { Button, Card, Checkbox, Form, Input, message } from 'antd';
-import './Login.scss';
-import { login } from '../../services/usersService';
+import { Button, Card, Form, Input, message } from 'antd';
+import './Register.scss';
+import { checkExist, login, register } from '../../services/usersService';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { checkLogin } from '../../actions/login';
 import { useEffect, useState } from 'react';
 import { getCookie, setCookie } from '../../helpers/cookie.js';
+import generateToken from '../../helpers/generateToken.js';
 
-export const Login = () => {
+export const Register = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loadings, setLoadings] = useState(false);
   const [form] = Form.useForm();
 
-  useEffect(() => {
-    const email = getCookie("email");
-    const password = getCookie("password");
-    const remember = getCookie("remember") === "true";
-
-    if (remember && email && password) {
-      form.setFieldsValue({
-        email,
-        password,
-        remember
-      });
-    }
-  }, [form]);
-
   const onFinish = async values => {
     setLoadings(true);
     try {
-      const { email, password, remember } = values;
-      const res = await login(email, password);
+      const checkExistEmail = await checkExist('email', values.email);
 
-      if (res.length > 0) {
+      if (checkExistEmail.length > 0) {
+        messageApi.open({
+          type: 'error',
+          content: 'Email already exists!',
+        });
+        return;
+      }
+
+      values.token = generateToken();
+      const res = await register(values);
+
+      if (res) {
         messageApi.open({
           type: 'success',
-          content: 'Login successful',
+          content: 'Register successful',
         });
-
-        setCookie('email', email);
-        setCookie('password', password);
-        setCookie('remember', remember);
-        setCookie('id', res[0].id);
-        setCookie('token', res[0].token);
-
-        dispatch(checkLogin(true));
         setTimeout(() => {
-          navigate("/");
+          navigate("/login");
         }, 1000);
       } else {
         messageApi.open({
           type: 'error',
-          content: 'Login failed. Invalid email or password.',
+          content: 'Register failed. Please try again.',
         });
       }
     } catch (error) {
       console.error("Login error:", error);
       messageApi.open({
         type: 'error',
-        content: 'An error occurred during login. Please try again later.',
+        content: 'An error occurred during registration. Please try again later.',
       });
     } finally {
       setLoadings(false);
@@ -74,7 +63,7 @@ export const Login = () => {
   return (
     <>
       {contextHolder}
-      <Card title="Login" style={{ maxWidth: 600 }}
+      <Card title="Register" style={{ maxWidth: 600 }}
       >
         <Form
           form={form}
@@ -87,6 +76,14 @@ export const Login = () => {
           onFinishFailed={onFinishFailed}
           autoComplete="off"
         >
+          <Form.Item
+            label="Full Name"
+            name="fullName"
+            rules={[{ required: true, message: 'Please input your fullName!' }]}
+          >
+            <Input />
+          </Form.Item>
+
           <Form.Item
             label="Email"
             name="email"
@@ -101,10 +98,6 @@ export const Login = () => {
             rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <Input.Password />
-          </Form.Item>
-
-          <Form.Item name="remember" valuePropName="checked" label={null}>
-            <Checkbox>Remember me</Checkbox>
           </Form.Item>
 
           <Form.Item label={null}>
