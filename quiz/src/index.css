@@ -23,7 +23,7 @@ code {
   --ant-pink-8: #f37fb7;
   --ant-pink-9: #f8a8cc;
   --ant-pink-10: #fad2e3;
-  --background-color: #fad2e3;
+  --background-color: #f8a8cc;
   --background-color-2: #fff;
   --text-color: #cb2b83;
 }
@@ -35,7 +35,7 @@ code {
 }
 
 .ant-btn:hover {
-  background-color: #fff;
+  background-color: var(--ant-pink-10) !important;
   color: var(--ant-pink-2) !important;
   border: none;
 }
