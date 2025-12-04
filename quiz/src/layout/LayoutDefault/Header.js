@@ -29,7 +29,7 @@ export const HeaderApp = () => {
                   <Button className='btn1'>Topics</Button>
                 </NavLink>
                 <NavLink to="/answers">
-                <Button className='btn1'>Answers</Button>
+                  <Button className='btn1'>Answers</Button>
                 </NavLink>
               </>
             )}
@@ -37,8 +37,6 @@ export const HeaderApp = () => {
 
           {token ? (
             <Space size="middle">
-              <NavLink to="/dashboard">
-                <Button icon={<DashboardOutlined />}>Dashboard</Button></NavLink>
               <NavLink to="/logout">
                 <Button icon={<LogoutOutlined />}>Logout</Button></NavLink>
             </Space>
