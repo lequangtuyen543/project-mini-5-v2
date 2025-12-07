@@ -48,7 +48,7 @@ export const Quiz = () => {
 
     const res = await createAnswer(options);
     if(res){
-      navigate("/results/"+res.id);
+      navigate("/result/"+res.id);
     }
   };
 

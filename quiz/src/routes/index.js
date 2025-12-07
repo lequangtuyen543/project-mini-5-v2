@@ -8,7 +8,7 @@ import { Quiz } from "../pages/Quiz";
 import { Register } from "../pages/Register";
 import { Topic } from "../pages/Topic";
 // import { Quiz } from "../pages/Quiz";
-// import Result from "../pages/Result";
+import Result from "../pages/Result";
 
 export const routes = [
   {
@@ -42,15 +42,16 @@ export const routes = [
             path: "/quiz/:id",
             element: <Quiz />
           },
+          {
+            path: "/result/:id",
+            element: <Result />
+          },
           //       {
           //         path: "/answers",
           //         element: <Answers />
           //       },
 
-          //       {
-          //         path: "/result/:id",
-          //         element: <Result />
-          //       },
+
         ]
       }
     ]
