@@ -31,13 +31,13 @@ code {
 .ant-btn {
   background-color: #fff;
   color: var(--ant-pink-6);
-  border: none;
+  border: var(--ant-pink-10) !important;
 }
 
 .ant-btn:hover {
   background-color: var(--ant-pink-10) !important;
   color: var(--ant-pink-2) !important;
-  border: none;
+  border: var(--ant-pink-10) !important;
 }
 
 .btn1 {

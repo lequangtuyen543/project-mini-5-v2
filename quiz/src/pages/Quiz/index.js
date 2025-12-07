@@ -1,13 +1,26 @@
 import { useEffect, useState } from "react";
 import { getQuestionsList } from "../../services/questionsService";
-import { useParams } from "react-router-dom";
-import { Typography, Form, Radio } from 'antd';
+import { useNavigate, useParams } from "react-router-dom";
+import { Typography, Form, Radio, Button } from 'antd';
+import { getTopicById } from "../../services/topicService";
+import { getCookie } from "../../helpers/cookie";
+import { createAnswer } from "../../services/quizService";
 
 const { Title } = Typography;
 
 export const Quiz = () => {
   const [data, setData] = useState([]);
+  const [topic, setTopic] = useState({});
   const params = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getTopicById(params.id);
+      setTopic(res);
+    }
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,8 +30,26 @@ export const Quiz = () => {
     fetchData();
   }, []);
 
-  const onFinish = values => {
+  const onFinish = async values => {
     console.log('Success:', values);
+    let selectedAnswers = [];
+    for (let key in values) {
+      selectedAnswers.push({
+        questionId: key,
+        answer: parseInt(values[key])
+      });
+    }
+
+    let options = {
+      userId: parseInt(getCookie("id")),
+      topicId: parseInt(params.id),
+      answers: selectedAnswers
+    }
+
+    const res = await createAnswer(options);
+    if(res){
+      navigate("/results/"+res.id);
+    }
   };
 
   const onFinishFailed = errorInfo => {
@@ -29,6 +60,8 @@ export const Quiz = () => {
 
   return (
     <>
+      <h1>Quiz for Topic: {topic.name}</h1>
+
       <Form
         name="basic"
         labelCol={{ span: 8 }}
@@ -38,6 +71,7 @@ export const Quiz = () => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
+        layout="vertical"
       >
         {data.map((question, index) => (
           <div key={index} style={{ marginBottom: '20px' }}>
@@ -49,9 +83,14 @@ export const Quiz = () => {
               name={question.id}
               rules={[{ required: true, message: 'Please input your answer!' }]}
             >
-              <Radio.Group key={index} style={{ display: 'block', marginBottom: '10px' }}>
+              <Radio.Group key={index} vertical>
                 {question.answers.map((answer, indexAnswer) => (
-                  <Radio value={answer} id={`quiz-${question.id}-${indexAnswer}`} key={indexAnswer}>
+                  <Radio
+                    value={answer}
+                    id={`quiz-${question.id}-${indexAnswer}`}
+                    key={indexAnswer}
+                    style={{ display: 'block', marginInlineStart: 12 }}
+                  >
                     {answer}
                   </Radio>
                 ))}
@@ -59,6 +98,12 @@ export const Quiz = () => {
             </Form.Item>
           </div>
         ))}
+
+        <Form.Item label={null}>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </Form.Item>
       </Form >
     </>
   )
