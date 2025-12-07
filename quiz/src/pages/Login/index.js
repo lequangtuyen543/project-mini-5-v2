@@ -1,11 +1,11 @@
-import { Button, Card, Checkbox, Form, Input, message } from 'antd';
+import { Button, Card, Form, Input, message } from 'antd';
 import './Login.scss';
 import { login } from '../../services/usersService';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { checkLogin } from '../../actions/login';
-import { useEffect, useState } from 'react';
-import { getCookie, setCookie } from '../../helpers/cookie.js';
+import { useState } from 'react';
+import { setCookie } from '../../helpers/cookie.js';
 
 export const Login = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -13,20 +13,6 @@ export const Login = () => {
   const navigate = useNavigate();
   const [loadings, setLoadings] = useState(false);
   const [form] = Form.useForm();
-
-  useEffect(() => {
-    const email = getCookie("email");
-    const password = getCookie("password");
-    const remember = getCookie("remember") === "true";
-
-    if (remember && email && password) {
-      form.setFieldsValue({
-        email,
-        password,
-        remember
-      });
-    }
-  }, [form]);
 
   const onFinish = async values => {
     setLoadings(true);
@@ -78,9 +64,7 @@ export const Login = () => {
       >
         <Form
           form={form}
-          name="basic"
-          // labelCol={{ span: 8 }}
-          // wrapperCol={{ span: 16 }}          
+          name="basic"     
           style={{ width: 450 }}
           initialValues={{ remember: true }}
           onFinish={onFinish}
@@ -101,10 +85,6 @@ export const Login = () => {
             rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <Input.Password />
-          </Form.Item>
-
-          <Form.Item name="remember" valuePropName="checked" label={null}>
-            <Checkbox>Remember me</Checkbox>
           </Form.Item>
 
           <Form.Item label={null}>

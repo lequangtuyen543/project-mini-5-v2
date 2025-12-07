@@ -8,8 +8,7 @@ export const Logout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // clearAllCookies();
-  deleteCookie("token");
+  clearAllCookies();
 
   useEffect(() => {
     dispatch(checkLogin(false));
