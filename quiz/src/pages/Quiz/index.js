@@ -86,7 +86,7 @@ export const Quiz = () => {
               <Radio.Group key={index} vertical>
                 {question.answers.map((answer, indexAnswer) => (
                   <Radio
-                    value={answer}
+                    value={indexAnswer}
                     id={`quiz-${question.id}-${indexAnswer}`}
                     key={indexAnswer}
                     style={{ display: 'block', marginInlineStart: 12 }}
