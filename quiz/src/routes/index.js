@@ -1,13 +1,12 @@
 import { PrivateRoute } from "../components/PrivateRoute";
 import { LayoutDefault } from "../layout/LayoutDefault";
-// import { Answers } from "../pages/Answers";
+import { Answers } from "../pages/Answers";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Logout } from "../pages/Logout";
 import { Quiz } from "../pages/Quiz";
 import { Register } from "../pages/Register";
 import { Topic } from "../pages/Topic";
-// import { Quiz } from "../pages/Quiz";
 import Result from "../pages/Result";
 
 export const routes = [
@@ -46,12 +45,10 @@ export const routes = [
             path: "/result/:id",
             element: <Result />
           },
-          //       {
-          //         path: "/answers",
-          //         element: <Answers />
-          //       },
-
-
+          {
+            path: "/answers",
+            element: <Answers />
+          },
         ]
       }
     ]

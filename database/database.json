@@ -1004,6 +1004,88 @@
           "answer": 2
         }
       ]
+    },
+    {
+      "id": "7db2",
+      "userId": 2,
+      "topicId": 4,
+      "answers": [
+        {
+          "questionId": "6",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "8ce4",
+      "userId": 1,
+      "topicId": 2,
+      "answers": [
+        {
+          "questionId": "2",
+          "answer": 0
+        },
+        {
+          "questionId": "5",
+          "answer": 0
+        },
+        {
+          "questionId": "9",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "efd0",
+      "userId": 1,
+      "topicId": 2,
+      "answers": [
+        {
+          "questionId": "2",
+          "answer": 0
+        },
+        {
+          "questionId": "5",
+          "answer": 0
+        },
+        {
+          "questionId": "9",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "1597",
+      "userId": 1,
+      "topicId": 4,
+      "answers": [
+        {
+          "questionId": "6",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "2dff",
+      "userId": 595,
+      "topicId": 4,
+      "answers": [
+        {
+          "questionId": "6",
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "7f8d",
+      "userId": null,
+      "topicId": 4,
+      "answers": [
+        {
+          "questionId": "6",
+          "answer": 1
+        }
+      ]
     }
   ]
 }
